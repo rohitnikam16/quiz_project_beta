@@ -39,7 +39,7 @@ var questions = [
 	new Question("Who invented ballpoint pen?", ["Biro Brothers","Waterman Brothers","Bicc Brothers","Write Brothers"],"Biro Brothers"),	
 	new Question("The National police Academy is located at?", ["Abu Road","Dehradun","Hyderabad","Bangalore"],"Hyderabad"),	
 	new Question("Which of these is favourite dish of Rohit?", ["rajma chawal","shahi paneer","sev tamatar","chhole"],"shahi paneer"),	
-	new Question("Which country in India is the maximum consumer of water?", ["textile","engineering","paper and pulp","thermal power"],"thermal power"),	
+	new Question("Which industry in India is the maximum consumer of water?", ["textile","engineering","paper and pulp","thermal power"],"thermal power"),	
 	new Question("First woman to climb Mount Everest was?", ["chevza chi","Marie Perec","Junko Tabei","Indira Gandhi"],"Junko Tabei")	,
 ];
 
