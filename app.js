@@ -1,14 +1,24 @@
 function populate() {
+	quiz.questionIndex++;
 	if(quiz.isEnded()){
 		showScores();
 	}
 	else {
 		document.getElementById("question").innerHTML = quiz.getQuestionByIndex().text;
 		var choices=quiz.getQuestionByIndex().choices;
+		
+		for(var i=0;i<choices.length;i++)
+		document.getElementById("btn"+i).style.pointerEvents = "auto";
+		
+		for(var i=0;i<choices.length;i++) {
+			var element=document.getElementById("btn" + i);
+			element.style.backgroundColor = "black";
+		}
+		
 		for(var i=0;i<choices.length;i++) {
 			var element=document.getElementById("choice" + i);
 			element.innerHTML = choices[i];
-			guess("btn"+i,choices[i]);
+			guess("btn"+i,i);
 		}
 		showProgress();
 	}
@@ -23,9 +33,10 @@ function showProgress(){
 function guess( id, guess){
 	document.getElementById(id).onclick = function(){
 		quiz.guess(guess);
-		populate();
 	}
-	
+	document.getElementById("next").onclick=function(){
+			populate();
+		}
 };
 
 function showScores() {
@@ -36,11 +47,11 @@ function showScores() {
 };
 
 var questions = [
-	new Question("Who invented ballpoint pen?", ["Biro Brothers","Waterman Brothers","Bicc Brothers","Write Brothers"],"Biro Brothers"),	
-	new Question("The National police Academy is located at?", ["Abu Road","Dehradun","Hyderabad","Bangalore"],"Hyderabad"),	
-	new Question("Which of these is favourite dish of Rohit?", ["rajma chawal","shahi paneer","sev tamatar","chhole"],"shahi paneer"),	
-	new Question("Which industry in India is the maximum consumer of water?", ["textile","engineering","paper and pulp","thermal power"],"thermal power"),	
-	new Question("First woman to climb Mount Everest was?", ["chevza chi","Marie Perec","Junko Tabei","Indira Gandhi"],"Junko Tabei")	,
+	new Question("Who invented ballpoint pen?", ["Biro Brothers","Waterman Brothers","Bicc Brothers","Write Brothers"],"0"),	
+	new Question("The National police Academy is located at?", ["Abu Road","Dehradun","Hyderabad","Bangalore"],"2"),	
+	new Question("Which of these is favourite dish of Rohit?", ["rajma chawal","shahi paneer","sev tamatar","chhole"],"1"),	
+	new Question("Which industry in India is the maximum consumer of water?", ["textile","engineering","paper and pulp","thermal power"],"3"),	
+	new Question("First woman to climb Mount Everest was?", ["chevza chi","Marie Perec","Junko Tabei","Indira Gandhi"],"2")	,
 ];
 
 var quiz = new Quiz(questions);
