@@ -69,7 +69,9 @@
 
 #next{
 	border: 1px solid #1D3C6A;
-	border-radius: 50px;
+	height:25px;
+	border-radius: 5px;
+	padding-top:4px;
 	position:relative;
 	top:25px;
 	left:275px;
