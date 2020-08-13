@@ -43,7 +43,21 @@ function showScores() {
 	var gameOverHtml = "<h1>Result</h1>";
 	gameOverHtml += "<h2 id='score'> Your score: " +quiz.getScore() + "</h2>" ;
 	var element = document.getElementById("quiz");
-	element.innerHTML = gameOverHtml ;
+	var elements=element.innerHTML;
+	element.innerHTML=gameOverHtml;
+	var b1 = document.createElement("BUTTON"); 
+	b1.textContent = "Take Quiz Again!";
+	b1.style.borderRadius='40px';
+	b1.style.outline='0';
+	b1.classList.add('HoverClass1');
+	var attachTo = document.getElementById("quiz");
+	attachTo.appendChild(b1);
+	b1.onclick = function() {
+		quiz.questionIndex=-1;
+		var element = document.getElementById("quiz");
+		element.innerHTML=elements;
+		populate();
+	}
 };
 
 var questions = [

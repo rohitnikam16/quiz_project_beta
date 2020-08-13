@@ -70,6 +70,7 @@
 #next{
 	border: 1px solid #1D3C6A;
 	height:25px;
+	background-color:#626E88;
 	border-radius: 5px;
 	padding-top:4px;
 	position:relative;
@@ -90,3 +91,4 @@
 #score{
 	text-align: center;
 }
+.HoverClass1:hover { background-color: #626E88 !important;}
