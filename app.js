@@ -56,6 +56,7 @@ function showScores() {
 		quiz.questionIndex=-1;
 		var element = document.getElementById("quiz");
 		element.innerHTML=elements;
+		quiz.resetScore();
 		populate();
 	}
 };

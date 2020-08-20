@@ -21,9 +21,9 @@ function Quiz(questions) {
 	this.getScore = function(){
 		return score;
 	}
-	this.rest = function() {
-	score=0;
-}
+	this.resetScore = function(){
+		score=0;
+	}
 }
 
 Quiz.prototype.getQuestionByIndex = function() {
